@@ -44,12 +44,12 @@ EOF
 
 elif [ "$weekday"="Tuesday" ]
 then
-cat <<EOF
+display=$(cat <<EOF
 Welcome to planet $hostname, "$title2 $USER"
 It is $currenttime on $weekday
 
 EOF
-
+)
 elif [ "$weekday" = "Wednesday" ]
 then
 cat <<EOF
@@ -91,4 +91,6 @@ It is $currenttime on $weekday
 EOF
  
 fi
-
+cat  <<EOF
+$(cowsay $display)
+EOF
